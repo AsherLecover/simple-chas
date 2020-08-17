@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Welcome To chas GAME</h1>
+    
+    <div>
+
+        <form [formGroup]="sizeForm" (ngSubmit)="onSubmit()" style="width: 40%;" action="">
+
+            <div class="colom">
+                <input id="colom-inp" formControlName="col" type="text" placeholder="Enter Col Num">
+            </div>
+
+            <div class="rows">
+                <input id="rows-inp" formControlName="row" type="text" placeholder="Enter Row Num">
+            </div>
+
+            <button (click)="onSubmit()"  type="submit" [disabled]="!sizeForm.valid" >Confirm Size</button>
+            <button (click)="craeteBord()"   >Create Bord</button>
+        </form>
+        <h3>{{message}}</h3>
+    </div>
+
+    <div class="bord">
+        
+<table>
+    <tr *ngFor="let i of arrCol">
+      <td [ngStyle]="{'background-color': i % 2 == 0 && j % 2 == 0 ||  i % 2 == 1 && j % 2 == 1 ? 'black' : 'white'}  "
+
+    *ngFor="let j of arrRow" (click)=getPosition(i,j) >i: {{i}} j: {{j}} </td>
+        
+    </tr>
+   
+  </table>
+  <div class="history">
+      <h3>history</h3>
+      <ul *ngFor="let i of userChoseHistory">
+          <li>{{i}}</li>
+      </ul>
+  </div>
+
+    </div>
+
+
+</div>

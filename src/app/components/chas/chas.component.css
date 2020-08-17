@@ -1,0 +1,18 @@
+.container{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.bord{
+    width: 1000px;
+    height: 1000px;
+}
+td{
+    width: 70px; 
+    height: 70px;
+     border: black 1px solid; 
+     margin: 2px; 
+}
+.history{
+    border: 1px black solid;
+    width: 1000px;
+}
